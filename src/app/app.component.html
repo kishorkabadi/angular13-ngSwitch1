@@ -1,0 +1,69 @@
+<app-top-bar></app-top-bar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<div>
+  <h4>ngIf Example</h4>
+  <input
+    type="radio"
+    name="rdio1"
+    (click)="changevalue(true)"
+    [checked]="isValid"
+  />True
+  <input
+    type="radio"
+    name="rdio1"
+    (click)="changevalue(false)"
+    [checked]="!isValid"
+  />False
+  <div *ngIf="isValid">This is valid</div>
+  <div *ngIf="!isValid">This is not valid</div>
+</div>
+<div>
+  <h4>ngIf with else block with ng-template Example</h4>
+  <input
+    type="radio"
+    name="rdio2"
+    (click)="changevalue(true)"
+    [checked]="isValid"
+  />True
+  <input
+    type="radio"
+    name="rdio2"
+    (click)="changevalue(false)"
+    [checked]="!isValid"
+  />False
+  <div *ngIf="isValid; else elseBlock">This is valid</div>
+  <ng-template #elseBlock>
+    <div>This is not valid</div>
+  </ng-template>
+</div>
+<div>
+  <h4>ngIf with then and else block with ng-template Example</h4>
+  <input
+    type="radio"
+    name="rdio3"
+    (click)="changevalue(true)"
+    [checked]="isValid"
+  />True
+  <input
+    type="radio"
+    name="rdio3"
+    (click)="changevalue(false)"
+    [checked]="!isValid"
+  />False
+  <div *ngIf="isValid; then thenBlock; else elseBlock1">
+    <ng-template #thenBlock>
+      <div>This is valid</div>
+    </ng-template>
+  </div>
+  <ng-template #elseBlock1>
+    <div>This is not valid</div>
+  </ng-template>
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
