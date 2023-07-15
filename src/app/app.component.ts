@@ -12,6 +12,11 @@ export class AppComponent {
   changevalue(valid: boolean) {
     this.isValid = valid;
   }
+  getCssClass() {
+    let cssClass;
+    cssClass = { redClass: true };
+    return cssClass;
+  }
 }
 
 /*

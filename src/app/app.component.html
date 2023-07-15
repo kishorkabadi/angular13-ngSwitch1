@@ -4,19 +4,17 @@
   <router-outlet></router-outlet>
 </div>
 <div>
-  <h4>ngIf Example</h4>
-  <input
-    type="radio"
-    name="rdio1"
-    (click)="changevalue(true)"
-    [checked]="isValid"
-  />True
-  <input
-    type="radio"
-    name="rdio1"
-    (click)="changevalue(false)"
-    [checked]="!isValid"
-  />False
-  <div *ngIf="isValid">This is valid</div>
-  <div *ngIf="!isValid">This is not valid</div>
+  <h4>ngClass with string Example</h4>
+  <p [ngClass]="'blueClass fontBold'">ng Class with css class binding</p>
+
+  <h4>ngClass with array Example</h4>
+  <p [ngClass]="['redClass', 'fontBold']">ng Class with array class binding</p>
+
+  <h4>ngClass with object Example</h4>
+  <p [ngClass]="{ redClass: true, fontBold: false }">
+    ng Class with object binding
+  </p>
+
+  <h4>ngClass with component method Example</h4>
+  <p [ngClass]="getCssClass()">ng Class with component method</p>
 </div>
