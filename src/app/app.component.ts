@@ -14,7 +14,7 @@ export class AppComponent {
   }
   getCssClass() {
     let cssClass;
-    cssClass = { redClass: true };
+    cssClass = { redClass: true,fontBold:true };
     return cssClass;
   }
 }
